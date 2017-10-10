@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>User List </h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div id="filter_columns">
+                    Select columns:
+                </div>
+                <table class="table table-striped" id="datatable" width="100%">
+                    <thead>
+                    <th>Username</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Company name</th>
+                    <th>Edit</th>
+                    </thead>
+                    <tfoot>
+                    <th>Username</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Company name</th>
+                    <th>Edit</th>
+                    </tfoot>
+                    <tbody>
+                    {{#entries}}
+                    <tr>
+                        <td>{{username}}</td>
+                        <td>{{firstname}}</td>
+                        <td>{{lastname}}</td>
+                        <td>{{email}}</td>
+                        <td>{{companyname}}</td>
+                        <td>
+                            <a href="#user/edit/{{_id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit
+                            </a>
+                            <a class="btn btn-danger btn-xs delete-button" element-id="{{_id}}"><i
+                                    class="fa fa-trash-o"></i> Delete </a>
+                        </td>
+                    </tr>
+                    {{/entries}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

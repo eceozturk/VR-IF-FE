@@ -1,0 +1,70 @@
+body {
+  font-family: "Signika","Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+  background: #F7F7F7;
+  padding-top: 150px;
+}
+a.toggle-vis {
+  cursor: pointer;
+  color: #3174c7;
+  text-decoration: none;
+}
+div#filter_columns {
+  margin: 0 0 20px 0;
+}
+
+a.toggle-vis.inactive {
+  color: dimgrey;
+}
+
+a.toggle-vis:after {
+  content: " - ";
+}
+
+a.toggle-vis:last-child:after {
+  content: "";
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.pull-left.date:hover {
+  text-decoration: none;
+}
+
+.menu-item {
+  cursor: pointer;
+}
+
+a.paginate_button {
+  cursor:pointer;
+}
+
+a.paginate_button.current {
+  color: white;
+}
+
+.btn-default{
+  color: #73879C;
+}
+
+td.cell-list span.cell-list-item:after {
+  content: ",";
+}
+
+td.cell-list span.cell-list-item:last-child:after {
+  content: "";
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar-default {
+    background: #ffffff;
+}
+
+article > a.date {
+  margin-left: 5px;
+}

@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>My Attributes </h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div id="filter_columns">
+                    Select columns:
+                </div>
+                <table class="table table-striped" id="datatable" width="100%">
+                    <thead>
+                    <th>Edit</th>
+                    <th>Description</th>
+                    <th>UI Name</th>
+                    <th>Active</th>
+                    <th>Shown By Default</th>
+                    <th>Default Value</th>
+                    <th>Deletable</th>
+                    <th>Type</th>
+                    {{#if isAdmin}}
+                    <th>Created at</th>
+                    <th>Updated at</th>
+                    {{/if}}
+                    </thead>
+                    <tfoot>
+                    <th>Edit</th>
+                    <th>Description</th>
+                    <th>UI Name</th>
+                    <th>Active</th>
+                    <th>Shown By Default</th>
+                    <th>Default Value</th>
+                    <th>Deletable</th>
+                    <th>Type</th>
+                    {{#if isAdmin}}
+                    <th>Created at</th>
+                    <th>Updated at</th>
+                    {{/if}}
+                    </tfoot>
+                    <tbody>
+                    {{#entries}}
+                    <tr>
+                        <td>
+                            <a href="#attribute/edit/{{_id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>
+                                Edit </a>
+                            <a class="btn btn-danger btn-xs delete-button" element-id="{{_id}}"><i
+                                    class="fa fa-trash-o"></i> Delete </a>
+                        </td>
+                        <td>{{description}}</td>
+                        <td>{{uiName}}</td>
+                        <td>{{active}}</td>
+                        <td>{{shownByDefault}}</td>
+                        <td>{{defaultValue}}</td>
+                        <td>{{deletable}}</td>
+                        <td>{{type}}</td>
+                        {{#if ../isAdmin}}
+                        <td>{{createdAt}}</td>
+                        <td>{{updatedAt}}</td>
+                        {{/if}}
+                    </tr>
+                    {{/entries}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

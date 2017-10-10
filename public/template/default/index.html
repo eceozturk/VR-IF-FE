@@ -1,0 +1,89 @@
+
+
+    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="count">{{size.testcontents}}</div>
+            <h3>Total Testcontents</h3>
+        </div>
+    </div>
+
+    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="tile-stats">
+            <div class="count">{{size.testvectors}}</div>
+            <h3>Total Testvectors</h3>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div>
+                    <div class="x_title">
+                        <h2>Latest Additions</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <ul class="list-unstyled top_profiles scroll-view">
+                        {{#additions}}
+                        <li class="media event">
+                            <article class="media event">
+                                <a class="pull-left date">
+                                    <p class="month">{{date.month}}</p>
+                                    <p class="day">{{date.day}}</p>
+                                </a>
+                                <div class="media-body">
+                                    <p class="title">{{type}}</p>
+                                    <p><a href="{{detailsUrl}}">{{name}}</a> was created</p>
+                                </div>
+                            </article>
+                        </li>
+                        {{/additions}}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div>
+                    <div class="x_title">
+                        <h2>Latest Updates</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <ul class="list-unstyled top_profiles scroll-view">
+                        {{#updates}}
+                        <li class="media event">
+                            <article class="media event">
+                                <a class="pull-left date">
+                                    <p class="month">{{date.month}}</p>
+                                    <p class="day">{{date.day}}</p>
+                                </a>
+                                <div class="media-body">
+                                    <p class="title">{{type}}</p>
+                                    <p><a href="{{detailsUrl}}">{{name}}</a> was updated</p>
+                                </div>
+                            </article>
+                        </li>
+                        {{/updates}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class=" col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Testvectors per Feature / Testcontent</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div id="donutTvTcF" style="width: 100% ;min-height:500px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Edit Testvector </h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <input type="hidden" id="element-id" value="{{element._id}}">
+                <br/>
+                <form id="edit-form" class="form-horizontal form-label-left">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name
+                            <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="name" required="required" name="name" value="{{element.name}}"
+                                   class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Active</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" {{#if element.active}} checked="checked" {{/if}} value="true"
+                                    id="activeTrue" name="active"> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" {{#unless element.active}} checked="checked" {{/unless}} value="false"
+                                    id="activeFalse" name="active"> no
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Include in dash.js JSON</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" {{#if element.includeInDashjsJson}} checked="checked" {{/if}} value="true"
+                                    id="jsonTrue" name="json"> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" {{#unless element.includeInDashjsJson}} checked="checked" {{/unless}} value="false"
+                                    id="jsonFalse" name="json"> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="url">URL
+                            <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="url" required="required" name="url" value="{{element.url}}"
+                                   class="form-control col-md-7 col-xs-12">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <a class="btn btn-success submit" id="import-attributes-button">Import Data</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Testcases </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control select2_single" multiple="multiple" id="testcase-select" required="">
+                                {{#select element.testcases}}
+                                {{#features}}
+                                <optgroup label="{{data.name}}"></optgroup>
+                                {{#testcases}}
+                                <option value="{{_id}}">{{name}}</option>
+                                {{/testcases}}
+                                {{/features}}
+                                {{/select}}
+                            </select>
+                        </div>
+                    </div>
+                    {{#element.attributeInstances}}
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{{attribute.uiName}}
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text"
+                                   {{#unless attribute.active }} disabled="disabled" {{/unless}}
+                            class="form-control col-md-7 col-xs-12 dynamic-attribute" {{#if
+                            attribute.active}}id="{{attribute.uiName}}{{/if}}"
+                            attribute-instance-id="{{_id}}"
+                            value="{{value}}">
+                        </div>
+                    </div>
+                    {{/element.attributeInstances}}
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                            <button class="btn btn-success submit" id="edit-button">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $(".select2_single").select2({
+            placeholder: "Select testcases"
+        });
+    });
+</script>

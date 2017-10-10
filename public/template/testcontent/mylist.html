@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>My Testcases</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div id="filter_columns">
+                    Select columns:
+                </div>
+                <table class="table table-striped dataTable" id="datatable" width="100%">
+                    <thead>
+                    <th>Edit</th>
+                    <th>Name</th>
+                    <th>Active</th>
+                    <th>Include in dash.js JSON</th>
+                    {{#attributes}}
+                    <th>{{uiName}}</th>
+                    {{/attributes}}
+                    {{#if isAdmin}}
+                    <th>Created at</th>
+                    <th>Updated at</th>
+                    {{/if}}
+                    </thead>
+                    <tfoot>
+                    <th>Edit</th>
+                    <th>Name</th>
+                    <th>Active</th>
+                    <th>Include in dash.js JSON</th>
+                    {{#attributes}}
+                    <th>{{uiName}}</th>
+                    {{/attributes}}
+                    {{#if isAdmin}}
+                    <th>Created at</th>
+                    <th>Updated at</th>
+                    {{/if}}
+                    </tfoot>
+                    <tbody>
+                    {{#printableElems}}
+                    <tr>
+                        <td>
+                            <a href="#testcontent/edit/{{_id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>
+                                Edit </a>
+                            <a class="btn btn-danger btn-xs delete-button" element-id="{{_id}}"><i
+                                    class="fa fa-trash-o"></i> Delete </a>
+                        </td>
+                        <td>{{name}}</td>
+                        <td>{{active}}</td>
+                        <td>{{includeInDashjsJson}}</td>
+                        {{#attributes}}
+                        <td>{{value}}</td>
+                        {{/attributes}}
+                        {{#if ../isAdmin}}
+                        <td>{{createdAt}}</td>
+                        <td>{{updatedAt}}</td>
+                        {{/if}}
+                    </tr>
+                    {{/printableElems}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

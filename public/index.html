@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DASH IF Test Assets Database</title>
+
+    <!-- Bootstrap -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" href="lib/datatables/css/datatables.min.css">
+    <link href="lib/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/alertifyjs/css/alertify.min.css">
+    <link rel="stylesheet" href="lib/alertifyjs/css/themes/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-select/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="lib/datatables/css/buttons.dataTables.min.css">
+    <link href="lib/build/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!--a href="http://dashif.org/" target="blank"--><img src="img/VR_IF_logo.png" hspace="15"><!--/a-->
+            </div>
+        </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">VR IF Test Assets Database</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown admin">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Attributes <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="admin"><a href="#attribute/list">List</a></li>
+                        <li class="admin"><a href="#attribute/create">Create</a></li>
+                        <li class="admin"><a href="#attribute/mylist">My Attributes</a></li>
+                    </ul>
+                </li>
+            </ul>
+     
+  
+            <ul class="nav navbar-nav">
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Testcontents <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#testcontent/list">List</a></li>
+                        <li class="member"><a href="#testcontent/create">Create</a></li>
+                        <li class="member"><a href="#testcontent/mylist">My Testcontents</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Testvectors <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#testvector/list">List</a></li>
+                        <li><a href="#testvector/groupedList">Grouped List</a></li>
+                        <li class="member"><a href="#testvector/create">Create</a></li>
+                        <li class="member"><a href="#testvector/mylist">My Testvectors</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown admin">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Users <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="admin"><a href="#user/list">List</a></li>
+                        <li class="admin"><a href="#user/create">Create</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#default/faq">FAQ / Help </a></li>
+                <li><a href="#login" id="login-menu-link">Login</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container" id="mainContainer">
+</div>
+
+<!-- Libaries -->
+
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="lib/build/js/custom.min.js"></script>
+<script src="lib/select2/dist/js/select2.full.min.js"></script>
+<script src="lib/alertifyjs/alertify.min.js"></script>
+<script src="lib/parsley/parsley.min.js"></script>
+<script src="lib/mpd-parser/getMPDParameters.js"></script>
+<script src="lib/datatables/js/jquery.dataTables.min.js"></script>
+<script src="lib/datatables/js/dataTables.buttons.min.js"></script>
+<script src="lib/datatables/js/buttons.bootstrap.min.js"></script>
+<script src="lib/datatables/js/buttons.flash.min.js"></script>
+<script src="lib/datatables/js/jszip.min.js"></script>
+<script src="lib/datatables/js/vfs_fonts.js"></script>
+<script src="lib/datatables/js/buttons.html5.min.js"></script>
+<script src="lib/eventbus/eventbus.min.js"></script>
+<script src="lib/handlebars/handlebars.min-latest.js"></script>
+<script src="lib/q/q.js"></script>
+<script src="lib/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="lib/echarts/echarts.min.js"></script>
+<script src="lib/js.cookie/js.cookie.js"></script>
+
+
+<!-- Include the SPA -->
+<!-- Minified -->
+<!--
+<script src="dist/app.min.js"></script>
+<script src="js/main.js"></script>
+ -->
+<!-- All -->
+
+<script src="js/App.js"></script>
+<script src="js/handler/Errorhandler.js"></script>
+<script src="js/utils/HTTPUtils.js"></script>
+<script src="js/view/MainView.js"></script>
+<script src="js/view/AttributeView.js"></script>
+<script src="js/view/LoginView.js"></script>
+<script src="js/view/global/MessageView.js"></script>
+<script src="js/view/TestcontentView.js"></script>
+<script src="js/view/TestvectorView.js"></script>
+<script src="js/view/DefaultView.js"></script>
+<script src="js/view/UserView.js"></script>
+<script src="js/constants/Constants.js"></script>
+<script src="js/model/LoginModel.js"></script>
+<script src="js/model/MainModel.js"></script>
+<script src="js/model/AttributeModel.js"></script>
+<script src="js/model/UserModel.js"></script>
+<script src="js/model/TestcontentModel.js"></script>
+<script src="js/model/TestvectorModel.js"></script>
+<script src="js/model/UserModel.js"></script>
+<script src="js/model/StatisticModel.js"></script>
+<script src="js/controller/MainController.js"></script>
+<script src="js/controller/AttributeController.js"></script>
+<script src="js/controller/LoginController.js"></script>
+<script src="js/controller/TestcontentController.js"></script>
+<script src="js/controller/TestvectorController.js"></script>
+<script src="js/controller/DefaultController.js"></script>
+<script src="js/controller/UserController.js"></script>
+<script src="js/router/Router.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
