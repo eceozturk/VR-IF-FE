@@ -37,6 +37,7 @@ App.constants.requestParameter = {
         EDIT: 'template/testcontent/edit.html',
         MYLIST: 'template/testcontent/mylist.html',
         DETAILS: 'template/testcontent/details.html',
+        UPLOADCONTENT: 'template/testcontent/uploadcontent.html',
     },
     testvector: {
         GET: BASE_URL + 'testvectors',

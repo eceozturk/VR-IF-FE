@@ -95,6 +95,9 @@ App.controller.MainController.prototype.handleRequest = function (route) {
             id = typeof route[2] !== 'undefined' ? route[2] : null;
             this.actionDetail(id);
             break;
+        case 'uploadcontent':
+            this.actionUploadContents();
+            break;
         default:
             this.actionList();
     }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <body>
+        <h2>Logistics for Uploading VR-IF Source Content</h2>
+        V1.0
+        <h5 style="color:red;">For limited distribution to VR-IF members</h5>
+        <div>
+            <h4>Upload Account Information: </h4>
+            Following are the logistics for upload of the source content
+            <ul>
+                <li>Upload Domain Name: vrifprobono.upload.akamai.com</li>
+                <li>Username: vrifprobono</li>
+                <li>Password: pass1234</li>
+                <li>All the VRIF Content resides in a folder called “564974” </li>
+            </ul>
+        </div>
+        <div>
+            <h4>Example upload log:</h4>
+            The following shows a log of a sample run on a MAC client:
+            <div style="background-color: white;
+                        width: 600px;
+                        border: 1px solid black;
+                        padding: 15px;
+                        margin: 2px;
+                        color: black">
+                        <p>muc-mpugk:_temp jhengge$ ftp vrifprobono.upload.akamai.com<br>
+                        Trying 23.53.124.138...<br>
+                        Connected to r29609-30516.a.1.f.e.stor.lb.akamai.net.
+                        220 Akamai Content Storage FTP Server<br>
+                        Name (vrifprobono.upload.akamai.com:jhengge): vrifprobono<br>
+                        331 Password required for vrifprobono.<br>
+                        Password: <br>
+                        230 User vrifprobono logged in.<br>
+                        Remote system type is UNIX.<br>
+                        Using binary mode to transfer files.<br>
+                        ftp> pwd<br>
+                        Remote directory: /<br>
+                        ftp> cd 564974<br>
+                        250 CWD command successful.<br>
+                        ftp> ls -la<br>
+                        229 Entering Extended Passive Mode (|||47957|)<br>
+                        150 Opening ASCII mode data connection for file list<br>
+                        -rw-r--r--   1 vrifprobono storage        60 Jul 17 08:42 test.html<br>
+                        226 Transfer complete.<br>
+                        ftp> put test2.html <br>
+                        local: test2.html remote: test2.html<br>
+                        229 Entering Extended Passive Mode (|||43629|)<br>
+                        150 Opening BINARY mode data connection for test2.html<br>
+                        100% |***********************************************|    60       48.42 KiB/s    00:00 ETA<br>
+                        226 Transfer complete.<br>
+                        60 bytes sent in 00:00 (0.40 KiB/s)<br>
+                        ftp> ls -la<br>
+                        229 Entering Extended Passive Mode (|||52363|)<br>
+                        150 Opening ASCII mode data connection for file list<br>
+                        -rw-r--r--   1 vrifprobono storage        60 Jul 17 08:42 test.html<br>
+                        -rw-r--r--   1 vrifprobono storage        60 Jul 17 15:44 test2.html<br>
+                        226 Transfer complete.<br>
+                        </p>
+            </div>
+        </div>
+        <div>
+        <h4>Open Issues</h4>
+        Issues reported using Windows command line FTP.
+        </div>
+        <div>
+        <h4>Accessing the uploaded content</h4>
+        Uploaded content can be requested via:
+            <ul>
+            <li>http://vrif.akamaized.net/&lt;filename&gt;</li>
+            <li>e.g. http://vrif.akamaized.net/test.html</li>
+            </ul>
+        </div>
+    </body>
+</html>
