@@ -124,4 +124,10 @@ App.controller.TestcontentController.prototype.onDeleteElement = function (calle
       });
 };
 
+App.controller.TestcontentController.prototype.actionUploadContents = function () {
+    var self = this;
+    self.view.renderUploadContent();
+    
+};
+
 App.controller.TestcontentController.prototype.constructor = App.controller.TestcontentController;

@@ -81,6 +81,16 @@ App.views.MainView.prototype.renderEdit = function (data) {
     return q.promise;
 };
 
+App.views.MainView.prototype.renderUploadContent = function () {
+    var self = this;
+
+    App.utils.HTTPUtils.get(App.constants.requestParameter[self.type + '_template'].UPLOADCONTENT)
+      .then(function (templateData) {
+          self.render(templateData);
+      });
+
+};
+
 App.views.MainView.prototype.getIdFromHiddenField = function () {
     return $('#element-id').val() || null;
 };

@@ -61,6 +61,9 @@ App.controller.DefaultController.prototype.filterTestvectors = function (elems) 
                             valid = true;
                         }
                     }
+                    else{
+                        valid=true;
+                    }
                 }
             });
         } else {

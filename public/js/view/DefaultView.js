@@ -357,16 +357,16 @@ App.views.DefaultView.prototype.createDonutTv = function (data) {
 
 App.views.DefaultView.prototype.createDonutTvTcF = function (data) {
     var currentTestcontents = [];
-    var testcontentss = [];
+    var testcontents = [];
     var myChart = echarts.init(document.getElementById('donutTvTcF'));
 
     data = data || [];
     data.forEach(function (item) {
-        item.testcontentss.forEach(function (tc) {
+        item.testcontents.forEach(function (tc) {
             if (!currentTestcontents[tc._id]) {
                 currentTestcontents[tc._id] = {
                     value: 1,
-                    name: tc.name + '(' + tc.feature.name + ')'
+                    name: tc.name
                 };
             } else {
                 currentTestcontents[tc._id].value += 1;
@@ -376,7 +376,7 @@ App.views.DefaultView.prototype.createDonutTvTcF = function (data) {
 
     for (var tc in currentTestcontents) {
         if (currentTestcontents.hasOwnProperty(tc)) {
-            testcontentss.push(currentTestcontents[tc]);
+            testcontents.push(currentTestcontents[tc]);
         }
     }
 
@@ -398,7 +398,7 @@ App.views.DefaultView.prototype.createDonutTvTcF = function (data) {
         },
         series: [
             {
-                name: 'Testcontent (Feature) ',
+                name: 'Testcontent',
                 type: 'pie',
                 selectedMode: 'single',
                 radius: [0, 70],
@@ -409,7 +409,7 @@ App.views.DefaultView.prototype.createDonutTvTcF = function (data) {
                 funnelAlign: 'right',
                 max: 1548,
 
-                data: testcontentss
+                data: testcontents
             },
         ]
     };
