@@ -165,7 +165,7 @@ App.views.TestvectorView.prototype.renderEdit = function (data) {
     var q = Q.defer();
     var self = this;
 
-    data.features = self.getTestcontentsByFeature(data.testcontents);
+    //data.features = self.getTestcontentsByFeature(data.testcontents);
     App.utils.HTTPUtils.get(App.constants.requestParameter[self.type + '_template'].EDIT)
       .then(function (templateData) {
           self.registerHandlebarsSelectHelper();

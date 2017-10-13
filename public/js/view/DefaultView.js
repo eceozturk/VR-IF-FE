@@ -16,8 +16,8 @@ App.views.DefaultView.prototype.renderIndex = function (data) {
       .then(function (templateData) {
           data = self.setActivities(data);
           self.renderHandlebars(templateData, data);
-          self.createDonutTc(data.testcontentTypes);
-          self.createDonutTv(data.testvectorTypes);
+          //self.createDonutTc(data.testcontentTypes);
+          //self.createDonutTv(data.testvectorTypes);
           self.createDonutTvTcF(data.testvectorTypes);
       })
       .catch(function (err) {
